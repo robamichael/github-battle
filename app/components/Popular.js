@@ -20,15 +20,15 @@ class Popular extends React.Component {
 		var languages = ['All', 'Javascript', 'Ruby', 'Java', 'CSS', 'Python'];
 		return (
 			<ul className='languages'>
-			<p>Selected Language: {this.state.selectedLanguage}</p>
 			{languages.map( (lang) => {
 				return(
 					<li 
+						style = {lang === this.state.selectedLanguage ? { color: '#d0021b' } : null}
 						onClick={this.updateLanguage.bind(null, lang)}
 						key={lang}>
 						{lang}
 					</li>
-				)}, this)}
+				)})}
 			</ul>
 		)
 	}
