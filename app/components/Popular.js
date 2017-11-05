@@ -1,7 +1,7 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 
-//Since component is very specific to Popular.js, we keep it h
+//Since component is very specific to Popular.js, we keep it here
 function SelectLanguage (props) {
 
 	var languages = ['All', 'Javascript', 'Ruby', 'Java', 'CSS', 'Python'];
