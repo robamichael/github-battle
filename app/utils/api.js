@@ -3,16 +3,17 @@ var axios = require('axios');
 var id = "";
 var sec = "";
 //var params = "?client_id=" + id + "&client_secret=" + sec;
+var params = "?";
 
 function getProfile (username) {
 	return axios.get('https://api.github.com/users/' + username + params)
 		.then(function (user) {
-			return user.data
+			return user.data;
 		});
 }
 
 function getRepos (username) {
-	return axios.get('https://api.github.com/users/' + username + '/repos/' + params + '&per_page=100')
+	return axios.get('https://api.github.com/users/' + username + '/repos' + params + '&per_page=100')
 }
 
 function getStarCount (repos) {
@@ -66,7 +67,7 @@ module.exports = {
 		var encodedURI = window.encodeURI('https://api.github.com/search/repositories?q=stars:>1+language:'+ language + '&sort=stars&order=desc&type=Repositories');
 
 		return axios.get(encodedURI)
-			.then (function (response) {
+			.then(function (response) {
 				return response.data.items;
 			});
 	}
